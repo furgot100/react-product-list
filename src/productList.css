@@ -1,0 +1,15 @@
+.ProductList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ProductContainer {
+    max-width: 25%;
+    min-width: 25%;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}

@@ -1,27 +1,20 @@
 import './App.css';
+import { useState } from 'react';
 import data, {allCategories, categoriesUnique, categoriesWithCounts, namesAndCategories} from './data'
+import CategoryList from './categorylist';
+import ProductList from './productList';
 
-function App(props) {
-  const {category, onClick} = props
+function App() {
+  const [category, setCategory] = useState()
 
   return (
-    <div className="CategoryList">
-      {namesAndCategories.map((obj) => {
-        const {name, count} = obj
-        const className = obj.name === category ? 'selected' : ''
-        return (
-          <button 
-            className={className}
-            onClick={() => onClick(name)}
-          >
-            {name}
-            <span> {count}</span>
-          </button>
-        )
-      })}
+    <div className="App">
+      <CategoryList 
+        category={category}
+        onClick={newCategory => setCategory(newCategory)} />
 
+      <ProductList category={category} />   
     </div>
-    
   );
 }
 
